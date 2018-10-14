@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Météo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+  </head>
+  <body>
+    <!-- CONSIGNES
+      ES6
+      Seuls les librairies d'animation sont utilisées (pas de jQuery ou qqch dans le genre)
+      Mobile first
+      Si il y a du css alors utiliser un préprocesseur
+      Si possible : PWA, installable, mode offline, notification
+      ONE PAGE APP
+
+      Cahier des charges :
+      - Une page où y'a la météo geoloc(= la météo de là où on se trouve)
+      - Pouvoir changer de ville
+      - Settings où des villes ont été sauvegardées par l'utilisateur (LocalStorage ?)
+      - Prévisions météos offline(bonus)
+      - Auto-compression(?)
+      - Rendu git
+      - Flexbox
+      - Pas de node_modules
+      - README. -> how to install and execute
+      Deadline : 14 Octobre 23h59
+    -->
+    <header>
+      <img src="img/logo.png" alt="logo"/>
+    </header>
+    <div class="rond-ext rond1">
+    </div>
+    <div class="rond-ext rond2">
+    </div>
+    <section id="corps">
+      <div class="rond-int">
+      </div>
+      <article id="ville">
+        <div id="jaaj">
+            <div id="adresse">
+              <p>Vous êtes à</p>
+              <p>
+              <span id="city"></span><br/>
+              <span id="country"></span><br/>
+              </p>
+            </div>
+            <div id="search">
+            </div>
+          <div id="map">
+          </div>
+          <div id="searchbar">
+            <form autocomplete="off" action="/">
+              <div class="autocomplete">
+                <input id="myInput" type="text" name="myCity" placeholder="Entrez une ville">
+                <button id="searchbutton">Rechercher</button>
+              </div>
+            </form>
+            <div id="LocalStorage">
+              <ul id="searchlist">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article id="meteo">
+        <div class="dem-weeks">
+          <ul id="thisday" class="day">
+            <li><span class="hour">00:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">03:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">06:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">09:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">12:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">15:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">18:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">21:00</span><span class="icon"></span><span class="temperature"></span></li>
+          </ul>
+          <ul id="day2" class="day">
+            <li><span class="hour">00:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">03:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">06:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">09:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">12:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">15:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">18:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">21:00</span><span class="icon"></span><span class="temperature"></span></li>
+          </ul>
+          <ul id="day3" class="day">
+            <li><span class="hour">00:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">03:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">06:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">09:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">12:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">15:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">18:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">21:00</span><span class="icon"></span><span class="temperature"></span></li>
+          </ul>
+          <ul id="day4" class="day">
+            <li><span class="hour">00:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">03:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">06:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">09:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">12:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">15:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">18:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">21:00</span><span class="icon"></span><span class="temperature"></span></li>
+          </ul>
+          <ul id="day5" class="day">
+            <li><span class="hour">00:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">03:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">06:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">09:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">12:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">15:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">18:00</span><span class="icon"></span><span class="temperature"></span></li>
+            <li><span class="hour">21:00</span><span class="icon"></span><span class="temperature"></span></li>
+          </ul>
+        </div>
+        <div id="fleches">
+          <div id="leftarrow">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54 85" style="enable-background:new 0 0 54 85;" xml:space="preserve">
+              <polygon points="54,11.3 11.4,53.9 0,42.6 42.6,0"/>
+              <polygon points="11.4,31.1 54,73.7 42.6,85 0,42.4"/>
+            </svg>
+          </div>
+          <div id="date">
+          </div>
+          <div id="rightarrow">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54 85" style="enable-background:new 0 0 54 85;" xml:space="preserve">
+              <polygon points="0,73.7 42.6,31.1 54,42.4 11.4,85"/>
+              <polygon points="42.6,53.9 0,11.3 11.4,0 54,42.6"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en"></script>
+  </body>
+</html>

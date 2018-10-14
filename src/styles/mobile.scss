@@ -1,0 +1,86 @@
+$pink: #e10016;
+
+@media screen and (max-width: 640px) {
+  body {
+   padding : 0;
+   width : 100%;
+   header {
+     margin-top : 20%;
+     margin-bottom: -25%;
+     position: relative;
+     z-index: 999;
+   }
+   #corps {
+     background: rgba(255,255,255,0.95);
+    box-shadow: none;
+     .rond-int {
+       display : none;
+     }
+     #ville {
+       margin-top : 20%;
+       margin-bottom : -20%;
+       #jaaj {
+         flex-direction: column;
+         #city, #country {
+           color : white;
+         }
+         #map {
+           width : 100%;
+           left : 0;
+           top : 400px;
+         }
+         #adresse {
+           padding-left : 15px;
+           padding-top : 50px;
+           p {
+             margin-bottom: 50px;
+             font-size : 20px;
+             color : #e10016;
+           }
+           #city, #country {
+             color : #e10016;
+           }
+           #city {
+             font-size : 40px;
+           }
+           #country {
+             font-size: 32px;
+           }
+         }
+         #searchbar{
+           color : $pink;
+           background : none;
+           width : 100%;
+           height : auto;
+           padding-bottom: 100px;
+           .autocomplete  {
+             input {
+               border-color : $pink;
+             }
+             button {
+               background : $pink;
+               border-color : $pink;
+             }
+           }
+         }
+       }
+     }
+     #meteo {
+       border-radius : 0%;
+       width : 100%;
+       margin : 0;
+       .day {
+         flex-wrap: wrap;
+         margin : 0;
+         li {
+           margin-bottom: 33px;
+           width : 50%;
+         }
+       }
+     }
+   }
+   footer {
+     height : auto;
+   }
+ }
+}

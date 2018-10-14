@@ -1,0 +1,225 @@
+$purple: #562acb;
+$blue: #28009c;
+$red: #e10016;
+
+/** IMPORTS **/
+
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
+/** GLOBAL **/
+
+body {
+  background: linear-gradient($blue, $red);
+  padding : 10%;
+  padding-top : 5%;
+  padding-bottom: 0;
+  font-family: 'Julius Sans One', sans-serif;
+  overflow-x : hidden;
+  position: relative;
+  width : 80%;
+  margin : auto;
+  .rond-ext {
+    height : 100px;
+    width : 100px;
+    border-radius : 50%;
+    background : none;
+    position : absolute;
+    z-index : 1;
+    border : 20px solid rgba(0,132,255,0.5);
+  }
+  .rond1 {
+    top : calc(50vh - 10px);
+    left : 10px;
+  }
+  .rond2 {
+    top : calc(90vh - 10px);
+    left : calc(85%);
+  }
+  header {
+    text-align: center;
+    margin-bottom: 5%;
+    img {
+      width : 175px;
+      height : auto;
+    }
+  }
+  #corps {
+    background : white;
+    margin-top : 10px;
+    box-shadow : 0px 0px 10px rgba(0,0,0,0.5);
+    overflow : hidden;
+    color : $blue;
+    position: relative;
+    z-index : 2;
+    .rond-int {
+      height : 650px;
+      width : 650px;
+      border-radius : 50%;
+      background : none;
+      position : absolute;
+      top : 65px;
+      left : -185px;
+      z-index : 1;
+      border : 30px solid $purple;
+    }
+    #jaaj {
+      display: flex;
+      justify-content: space-between;
+      #adresse {
+        padding-top : 200px;
+        padding-left : 75px;
+        height : 600px;
+        position: relative;
+        z-index: 999;
+        p {
+          font-size : 32px;
+          margin-bottom : 100px;
+          #city{
+            font-size : 72px;
+            color : $red;
+            font-weight: bold;
+          }
+          #country{
+            font-size : 40px;
+            color : $red;
+          }
+        }
+      }
+      #searchbar {
+        width : 50%;
+        background : #E21481;
+        height : 500px;
+        margin-top : 95px;
+        border-radius: 33% 0 0 33%;
+        color : white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-weight: bold;
+        z-index: 2;
+        .autocomplete {
+          display: flex;
+          justify-content: center;
+          input {
+            width : 80%;
+            height : 50px;
+            font-family: Arial;
+            border : 1px solid black;
+          }
+          button {
+            width : initial;
+            margin-left : -6px;
+            background : black;
+            color : white;
+            cursor : pointer;
+            border : 1px solid black;
+          }
+        }
+        #searchlist {
+          margin-left : calc(5% + 6px);
+          margin-top : 5%;
+          max-height: 200px;
+          overflow-y: scroll;
+          li{
+            display: flex;
+            justify-content: space-between;
+            .searchlink {
+              text-decoration: underline;
+              cursor : pointer;
+            }
+          }
+        }
+      }
+      #map {
+        height : 350px;
+        width : 50%;
+        position: absolute;
+        left : 25%;
+        top : 500px;
+        z-index : 3;
+        box-shadow : 0px 0px 10px rgba(0,0,0,0.75);
+        background : grey;
+        @media screen and (max-width: 1000px) {
+          width: 80%;
+          left: 10%;
+        }
+      }
+    }
+    #meteo {
+      color : white;
+      width : 125%;
+      margin-left : -12.5%;
+      background : $purple;
+      padding-top : 150px;
+      padding-bottom: 50px;
+      height : auto;
+      border-radius : 50% 50% 0px 0px;
+      .dem-weeks {
+        width : 500%;
+        display : flex;
+        transition : all 1.2s;
+        padding-top : 20px;
+        .day {
+          display : flex;
+          justify-content: space-around;
+          width : 100%;
+          margin : 0 calc(12.5% / 5);
+          @media screen and (max-width: 1000px) {
+            flex-wrap: wrap;
+            margin : 0 calc(12.5% / 4);
+          }
+          li {
+            display : flex;
+            flex-direction: column;
+            height : 200px;
+            justify-content: space-around;
+            text-align : center;
+            @media screen and (max-width: 1000px) {
+              width : 25%;
+              height : auto;
+              justify-content: initial;
+              margin-bottom: 33px;
+            }
+          }
+          .currenttime span {
+            font-weight: bold;
+          }
+          span {
+              font-size: 20px;
+          }
+        }
+      }
+      #fleches {
+        display : flex;
+        justify-content: space-evenly;
+        margin-top : 50px;
+        align-items: center;
+        width : 80%;
+        margin : 50px auto;
+        div {
+          svg {
+            height : 50px;
+            width : auto;
+            cursor : pointer;
+            polygon {
+              fill : white;
+            }
+          }
+        }
+      }
+      #date p {
+        font-size : 26px;
+      }
+
+    }
+  }
+  footer {
+    height : 100px;
+    position : relative;
+    z-index : 4;
+    color : white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top : 100px;
+  }
+}

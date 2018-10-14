@@ -1,0 +1,110 @@
+@media screen and (max-width: 640px) {
+  body {
+   padding : 0;
+   width : 100%;
+  }
+
+  header {
+    margin-top : 20%;
+    margin-bottom: -25%;
+    position: relative;
+    z-index: 999;
+  }
+
+  #corps {
+    background: rgba(255,255,255,0.95);
+  }
+
+  .rond-int {
+    display : none;
+  }
+
+  #city, #country {
+    color : white;
+  }
+
+  #map {
+    width : 100%;
+    left : 0;
+    top : 400px;
+  }
+
+  #ville {
+    margin-top : 20%;
+    margin-bottom: : -20%;
+  }
+
+  #jaaj {
+    flex-direction: column;
+  }
+
+  #adresse {
+    padding-left : 15px;
+    padding-top : 50px;
+  }
+
+  #adresse p {
+    margin-bottom: 50px;
+    font-size : 20px;
+  }
+
+  #adresse p, #city, #country {
+    color : #e10016;
+  }
+
+  #city {
+    font-size : 40px;
+  }
+
+  #country {
+    font-size: 32px;
+  }
+
+  #searchbar{
+    color : #e10016;
+    background : none;
+    width : 100%;
+    height : auto;
+    padding-bottom: 100px;
+  }
+
+  .autocomplete input {
+    border-color : #e10016;
+  }
+
+  .autocomplete button {
+    background : #e10016;
+    border-color : #e10016;
+  }
+
+  #meteo {
+    border-radius : 0%;
+    width : 100%;
+    margin : 0;
+  }
+
+  #corps {
+    box-shadow: none;
+  }
+
+  .day {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin : 0;
+  }
+
+  .day li {
+    margin-bottom: 33px;
+    width : 50%;
+    height : auto;
+  }
+
+  #meteo {
+    height : auto;
+    padding-bottom: 50px;
+  }
+
+  footer {
+    height : auto;
+  }
+}
